@@ -1,0 +1,438 @@
+/* Reports.css - Styling for the Library Reports dashboard */
+
+.reports-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Reports Header */
+.reports-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.reports-header h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.last-updated {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Tabs */
+.reports-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0;
+  overflow-x: auto;
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab-button:hover {
+  color: #2c3e50;
+}
+
+.tab-button.active {
+  color: #3498db;
+  border-bottom-color: #3498db;
+}
+
+/* Loading container */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  color: #666;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error message */
+.error-message {
+  background-color: #fde8e8;
+  color: #e53e3e;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-left: 4px solid #e53e3e;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.summary-card h3, .summary-card h4 {
+  color: #7f8c8d;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Charts */
+.chart-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.chart-container {
+  flex: 1;
+  min-width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chart-container h3 {
+  color: #2c3e50;
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.half-width {
+  min-width: calc(50% - 1rem);
+}
+
+@media (max-width: 768px) {
+  .half-width {
+    min-width: 100%;
+  }
+}
+
+/* Action buttons */
+.actions-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.export-button, .print-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.export-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.export-button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.export-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.print-button {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.print-button:hover {
+  background-color: #1a2530;
+}
+
+/* Genre Stats */
+.genre-stats {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.genre-stats h3 {
+  color: #2c3e50;
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stats-table th, .stats-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.stats-table th {
+  font-weight: 600;
+  color: #2c3e50;
+  background-color: #f5f7fa;
+}
+
+.stats-table tr:last-child td {
+  border-bottom: none;
+}
+
+.stats-table tr:hover td {
+  background-color: #f9fafb;
+}
+
+/* Date filter */
+.date-filter {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.date-filter label {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.date-filter select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 0.9rem;
+  color: #2c3e50;
+}
+
+/* Activity Summary */
+.activity-summary {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.activity-summary h3 {
+  color: #2c3e50;
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Author sections */
+.author-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.author-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.author-section h4 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.book-list {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.book-list li {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.book-genre {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.borrowed-badge {
+  background-color: #e74c3c;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+/* Authors tab */
+.authors-tab .chart-container {
+  margin-bottom: 2rem;
+}
+
+.author-books {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.author-books h3 {
+  color: #2c3e50;
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Print styles */
+@media print {
+  .reports-tabs, 
+  .actions-container, 
+  .date-filter {
+    display: none;
+  }
+
+  .reports-container, 
+  .chart-container, 
+  .summary-card, 
+  .genre-stats,
+  .activity-summary,
+  .author-books {
+    box-shadow: none;
+    margin-bottom: 1rem;
+    break-inside: avoid;
+  }
+
+  .chart-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .reports-container {
+    padding: 0;
+  }
+
+  .reports-header h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .reports-header h1 {
+    font-size: 2rem;
+  }
+
+  .reports-tabs {
+    justify-content: flex-start;
+  }
+
+  .summary-cards {
+    flex-direction: column;
+  }
+
+  .summary-card {
+    min-width: 100%;
+  }
+
+  .chart-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reports-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .tab-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .card-value {
+    font-size: 1.5rem;
+  }
+
+  .actions-container {
+    flex-direction: column;
+  }
+  .export-button, .print-button {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,177 @@
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the body and HTML take full width and height */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background: var(--primary);
+}
+
+/* Define root variables for colors and styles */
+:root {
+  --primary: #000000;
+  --secondary: #64748b;
+  --white: #ffffff;
+  --radius: 16px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  --bounce-transition: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Fullscreen login page styling */
+.login-page {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2000');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Glassmorphism overlay */
+.glass-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+/* Center login content */
+.login-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: slideUp 1s var(--bounce-transition);
+  color: var(--white);
+}
+
+/* Login heading */
+.login-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Login subtext */
+.login-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Form styling */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form labels */
+.auth-form label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+/* Input fields */
+.auth-form input {
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--white);
+  background: transparent;
+  color: var(--white);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 300px;
+}
+
+/* Input focus effect */
+.auth-form input:focus {
+  border-color: var(--primary);
+}
+
+/* Login button */
+.auth-form button {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+.auth-form button:hover {
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+/* Button click effect */
+.auth-form button:active {
+  transform: scale(0.98);
+}
+
+/* Links below the form */
+.auth-links {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+/* Login and signup links */
+.auth-links a {
+  color: var(--white);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+/* Error message styling */
+#error-message {
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
